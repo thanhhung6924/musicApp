@@ -10,6 +10,7 @@ const getProgress = $("#progress");
 const nextbtn = $(".btn-next");
 const prevbtn = $(".btn-prev");
 const randombtn = $(".btn-random");
+const reloadbtn = $(".btn-repeat");
 
 const app = {
   isRandom: false,
@@ -140,8 +141,8 @@ const app = {
       }
       if (getProgress.value == 100) {
         _this.nextSong();
-       
-        getProgress.value =0;
+
+        getProgress.value = 0;
         audio.play();
       }
     };
@@ -156,11 +157,17 @@ const app = {
       if (_this.isRandom) {
         _this.randomSong();
       } else {
-        _this.nextSong();
+        _this.prevSong();
       }
 
       audio.play();
     };
+    reloadbtn.onclick = function () {
+      _this.prevSong();
+      _this.nextSong();
+      audio.play();
+    };
+
     prevbtn.onclick = function () {
       if (_this.isRandom) {
         _this.randomSong();
