@@ -43,7 +43,7 @@ html {
   top: 0;
   width: 100%;
   max-width: 480px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid  rgba(146, 146, 146, 0.9);
 }
 
 /* HEADER */
