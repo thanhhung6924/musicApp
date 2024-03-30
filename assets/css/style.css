@@ -43,7 +43,7 @@ html {
   top: 0;
   width: 100%;
   max-width: 480px;
-  border-bottom: 1px solid  rgba(146, 146, 146, 0.9);
+  border-bottom: 1px solid rgba(146, 146, 146, 0.9);
 }
 
 /* HEADER */
@@ -142,6 +142,10 @@ header h2 {
   padding: 8px 16px;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(247, 247, 247, 0.1);
+}
+
+.song:hover {
+  box-shadow: 1px 1px 20px rgb(255, 255, 255);
 }
 
 .song.active {
