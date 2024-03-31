@@ -24,10 +24,10 @@ const app = {
       img: "./assets/img/bg1.webp",
     },
     {
-      name: "Thủ Đô Cypher",
-      singer: "john denver",
-      path: "./assets/music/(2)Ha-Noi-Thu-7-Phai-Len-Do-Remix-RPT-Orijinn-LOW-G-RZMas-RPT-MCK-Thu-Do-Cypher.mp3",
-      img: "./assets/img/bg2.jpg",
+      name: "Tinh Vệ",
+      singer: "Nobody",
+      path: "./assets/music/(8)TinhVeJapandeeRemix-HuaLamTamNhatKhoaLangTinh-10309354.mp3",
+      img: "./assets/img/bg7.jpg",
     },
     {
       name: "Đánh đổi",
@@ -58,6 +58,13 @@ const app = {
       singer: "LowG-AnhPhan-MCK",
       path: "./assets/music/(2)Ha-Noi-Thu-7-Phai-Len-Do-Remix-RPT-Orijinn-LOW-G-RZMas-RPT-MCK-Thu-Do-Cypher.mp3",
       img: "./assets/img/bg2.jpg",
+    },
+
+    {
+      name: "Phải Chia Tay Thôi",
+      singer: "Nobody",
+      path: "./assets/music/(7)PhaiChiaTayThoiDaiMeoRemix-HuongLy-7217233.mp3",
+      img: "./assets/img/bg8.webp",
     },
   ],
   render: function () {
