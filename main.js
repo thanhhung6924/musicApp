@@ -146,7 +146,9 @@ const app = {
       if (getProgress.value == 100) {
         _this.nextSong();
         getProgress.value = 0;
+
         audio.play();
+        _this.render();
       }
     };
     //xử lý tua nhạc
@@ -202,8 +204,8 @@ const app = {
 
         if (songNode) {
           //phải đổi sang number mới hoặc động
-          _this.currentIndex = Number(songNode.getAttribute("data-index"))
-                    // _this.scrollToactivesong();
+          _this.currentIndex = Number(songNode.getAttribute("data-index"));
+          // _this.scrollToactivesong();
           _this.loadCurrentsong();
           audio.play();
           _this.render();
