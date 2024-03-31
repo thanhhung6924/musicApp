@@ -157,7 +157,7 @@ const app = {
       if (_this.isRandom) {
         _this.randomSong();
       } else {
-        _this.prevSong();
+       _this.nextSong();
       }
 
       audio.play();
@@ -198,10 +198,11 @@ const app = {
   prevSong: function () {
     this.currentIndex--;
     if (this.currentIndex < 0) {
-      this.currentIndex = this.song.length;
+      this.currentIndex = this.song.length - 1;
     }
     this.loadCurrentsong();
-  },
+},
+
   randomSong: function () {
     let newIndex;
     do {
