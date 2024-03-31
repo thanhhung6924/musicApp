@@ -62,9 +62,11 @@ const app = {
   ],
   render: function () {
     console.log("123"); //test rander
-    const htmls = this.song.map((song) => {
+    const htmls = this.song.map((song, index) => {
       return ` 
-             <div class="song">
+             <div class="song ${
+               index === this.currentIndex ? "active" : ""
+             }"data-index=${index}>
         <div class="thumb" style="background-image: url('${song.img}')">
         </div>
         <div class="body">
@@ -76,7 +78,7 @@ const app = {
         </div>
       </div>`;
     });
-    $(".playlist").innerHTML = htmls.join("\n");
+    playlist.innerHTML = htmls.join("\n");
   },
   //lấy bài nhạt hiện tại(định nghĩa )
   definePropertys: function () {
@@ -139,9 +141,10 @@ const app = {
         ); //test
         getProgress.value = progressPersent;
       }
+
+      ///câu lệnh này kiểm tra nêu bài hát hoàn thành thì next bài
       if (getProgress.value == 100) {
         _this.nextSong();
-
         getProgress.value = 0;
         audio.play();
       }
@@ -153,20 +156,23 @@ const app = {
       audio.currentTime = seekTime;
     };
     //khi next bài hát
-    nextbtn.onclick = function () {
+    (nextbtn.onclick = function () {
       if (_this.isRandom) {
         _this.randomSong();
       } else {
-       _this.nextSong();
+        _this.nextSong();
       }
 
       audio.play();
-    };
-    reloadbtn.onclick = function () {
-      _this.prevSong();
-      _this.nextSong();
-      audio.play();
-    };
+      _this.render();
+      _this.scrollToactivesong();
+    }),
+      (reloadbtn.onclick = function () {
+        _this.prevSong();
+        _this.nextSong();
+        audio.play();
+        // _this.render();
+      });
 
     prevbtn.onclick = function () {
       if (_this.isRandom) {
@@ -176,11 +182,47 @@ const app = {
       }
 
       audio.play();
+      _this.render();
+      _this.scrollToactivesong();
     };
     randombtn.onclick = function (e) {
       _this.isRandom = !_this.isRandom;
       randombtn.classList.toggle("active", _this.isRandom);
     };
+    //lắng nghe click lên playlist(bất cứ chỗ nào trên playlist)
+    playlist.onclick = function (e) {
+      const songNode = e.target.closest(".song:not(.active)");
+      if (
+        songNode ||
+        !e.target.closest(".option")
+        //kick vào bài hat chưa acticve
+        //closet trả về chính nó hoặc thẻ cha của nó nếu k phải thì trả về null
+      ) {
+        //xử lý khi ấn vào bài khác mới(đã làm)
+
+        if (songNode) {
+          //phải đổi sang number mới hoặc động
+          _this.currentIndex = Number(songNode.getAttribute("data-index"))
+                    // _this.scrollToactivesong();
+          _this.loadCurrentsong();
+          audio.play();
+          _this.render();
+          console.log(songNode.getAttribute("data-index"));
+        }
+      }
+      //xử lý khi ẩn vào option(chưa làm)
+    };
+  },
+  //hàm này khi song active bị khuất thì đưa lên
+  //kick hoat khi next và prev
+  scrollToactivesong: function () {
+    setTimeout(function () {
+      $(".song.active").scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }, 700);
   },
   loadCurrentsong: function () {
     heading.textContent = this.currentSong.name;
@@ -201,7 +243,7 @@ const app = {
       this.currentIndex = this.song.length - 1;
     }
     this.loadCurrentsong();
-},
+  },
 
   randomSong: function () {
     let newIndex;

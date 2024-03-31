@@ -150,10 +150,12 @@ header h2 {
 
 .song.active {
   background-color: var(--primary-color);
+  box-shadow: 1px 1px 20px rgb(199, 155, 113);
 }
 
 .song:active {
   opacity: 0.8;
+  /* làm mờ khi kích tạo cảm giác nhấn */
 }
 
 .song.active .option,
