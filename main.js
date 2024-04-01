@@ -157,11 +157,20 @@ const app = {
 
       ///câu lệnh này kiểm tra nêu bài hát hoàn thành thì next bài
       if (getProgress.value == 100) {
-        _this.nextSong();
-        getProgress.value = 0;
+        // _this.nextSong();
+        // getProgress.value = 0;
 
+        // audio.play();
+        // _this.render();
+        if (_this.isRandom) {
+          _this.randomSong();
+        } else {
+          _this.nextSong();
+        }
+        getProgress.value = 0;
         audio.play();
         _this.render();
+        _this.scrollToactivesong();
       }
     };
     //xử lý tua nhạc
