@@ -18,8 +18,8 @@ const app = {
   isPlaying: false,
   song: [
     {
-      name: "take me home",
-      singer: "john denver",
+      name: "Take me home",
+      singer: "John denver",
       path: "./assets/music/(1)John_Denver_-_Take_Me_Home_Country_Roads_Remastered_(Hydr0.org).mp3",
       img: "./assets/img/bg1.webp",
     },
@@ -65,6 +65,12 @@ const app = {
       singer: "Nobody",
       path: "./assets/music/(7)PhaiChiaTayThoiDaiMeoRemix-HuongLy-7217233.mp3",
       img: "./assets/img/bg8.webp",
+    },
+    {
+      name: "Anh rất nhớ em",
+      singer: "Remix Trung Quốc",
+      path: "../assets/music/(9)AnhRatNhoEmRemixTiktok2024-VA-13917196.mp3",
+      img: "./assets/img/bg9.jpg",
     },
   ],
   render: function () {
