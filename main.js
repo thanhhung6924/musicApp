@@ -69,7 +69,7 @@ const app = {
     {
       name: "Anh rất nhớ em",
       singer: "Remix Trung Quốc",
-      path: "../assets/music/(9)AnhRatNhoEmRemixTiktok2024-VA-13917196.mp3",
+      path: "./assets/music/(9)AnhRatNhoEmRemixTiktok2024-VA-13917196.mp3",
       img: "./assets/img/bg9.jpg",
     },
   ],
