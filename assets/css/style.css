@@ -39,12 +39,10 @@ html {
   border-radius: 4px;
   opacity: 0.8;
 }
-.progress:hover{
+.progress:hover {
   opacity: 1;
 }
 .dashboard {
- 
- 
   background-color: rgb(232, 0, 0);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -155,16 +153,16 @@ header h2 {
   background-color: rgba(51, 20, 110, 0.8);
   padding: 8px 16px;
   border-radius: 5px;
-  box-shadow: 0 2px 3px rgba(247, 247, 247, 0.1);
+  box-shadow: 0 2px 3px rgba(82, 47, 100, 0.1);
 }
 
 .song:hover {
-  box-shadow: 1px 1px 20px rgb(255, 255, 255);
+  box-shadow: 1px 1px 20px rgb(113, 33, 159);
 }
 
 .song.active {
   background-color: var(--primary-color);
-  box-shadow: 1px 1px 20px rgb(199, 155, 113);
+  box-shadow: 1px 1px 20px rgb(96, 7, 144);
 }
 
 .song:active {

@@ -253,7 +253,7 @@ const app = {
   loadCurrentsong: function () {
     heading.textContent = this.currentSong.name;
      bgr.style.backgroundImage = `url(${this.currentSong.img})`;
-     bdr .style.backdropFilter = "blur(10px)";
+     bdr .style.backdropFilter = "blur(50px)";
     cdThumb.style.backgroundImage = `url(${this.currentSong.img})`;
     audio.src = this.currentSong.path;
     // console.log(heading, cdThumb, audio);
