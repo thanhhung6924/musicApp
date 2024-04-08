@@ -11,6 +11,8 @@ const nextbtn = $(".btn-next");
 const prevbtn = $(".btn-prev");
 const randombtn = $(".btn-random");
 const reloadbtn = $(".btn-repeat");
+const bgr = $(".dashboard");
+const bdr = $(".backdrop");
 
 const app = {
   isRandom: false,
@@ -250,6 +252,8 @@ const app = {
   },
   loadCurrentsong: function () {
     heading.textContent = this.currentSong.name;
+     bgr.style.backgroundImage = `url(${this.currentSong.img})`;
+     bdr .style.backdropFilter = "blur(10px)";
     cdThumb.style.backgroundImage = `url(${this.currentSong.img})`;
     audio.src = this.currentSong.path;
     // console.log(heading, cdThumb, audio);

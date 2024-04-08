@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #915c31;
-  --text-color: #8c8c8c;
+  --primary-color: #7d48a6;
+  --text-color: #ffffff;
 }
 
 * {
@@ -35,15 +35,29 @@ html {
 .player.playing .icon-play {
   display: none;
 }
-
+.progress {
+  border-radius: 4px;
+  opacity: 0.8;
+}
+.progress:hover{
+  opacity: 1;
+}
 .dashboard {
-  padding: 16px 16px 14px;
-  background-color: rgb(62, 62, 62);
+ 
+ 
+  background-color: rgb(232, 0, 0);
+  backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
   width: 100%;
   max-width: 480px;
   border-bottom: 1px solid rgba(146, 146, 146, 0.9);
+}
+.backdrop {
+  width: 100%;
+
+  max-width: 480px;
+  padding: 16px 16px 14px;
 }
 
 /* HEADER */
@@ -138,7 +152,7 @@ header h2 {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(51, 20, 110, 0.8);
   padding: 8px 16px;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(247, 247, 247, 0.1);
