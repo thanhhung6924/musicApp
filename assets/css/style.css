@@ -206,5 +206,10 @@ header h2 {
 }
 .author {
   margin-top: 6px;
-  -webkit-backdrop-filter: blur();
+}
+.volumediv {
+}
+#volume {
+  position: absolute;
+  transform: rotate(90deg) translateY(calc(-100% + 20px));
 }
