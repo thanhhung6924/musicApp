@@ -176,7 +176,7 @@ const app = {
       }
     };
     //xử lý tua nhạc
-    getProgress.onchange = function (e) {
+    getProgress.oninput = function (e) {
       //   console.log(e.target.value);
       const seekTime = (audio.duration / 100) * e.target.value;
       audio.currentTime = seekTime;
@@ -252,8 +252,10 @@ const app = {
   },
   loadCurrentsong: function () {
     heading.textContent = this.currentSong.name;
-     bgr.style.backgroundImage = `url(${this.currentSong.img})`;
-     bdr .style.backdropFilter = "blur(50px)";
+    bgr.style.backgroundImage = `url(${this.currentSong.img})`;
+    bdr.style.backdropFilter = "blur(50px)";
+    bdr.style.webkitBackdropFilter = "blur(50px)";
+
     cdThumb.style.backgroundImage = `url(${this.currentSong.img})`;
     audio.src = this.currentSong.path;
     // console.log(heading, cdThumb, audio);

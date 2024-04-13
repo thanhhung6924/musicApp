@@ -206,4 +206,5 @@ header h2 {
 }
 .author {
   margin-top: 6px;
+  -webkit-backdrop-filter: blur();
 }
